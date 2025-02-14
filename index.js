@@ -58,7 +58,7 @@ app.put("/updaterecipes/:id", async (req, res) => {
 app.delete("/deleterecipes/:id", async (req, res) => {
     try {
         await Recipe.findOneAndDelete({ _id: req.params.id });
-        res.status(200).json({ message: "Successfully deleted" });
+        res.status(200).json({ message: "Recipe deleted successfully" });
     } catch (error) {
         res.status(404).json({ message: "Recipe not found" });
     }
